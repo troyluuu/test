@@ -7,13 +7,17 @@
 <script>
 let productDiv = document.getElementById("product");
 productDiv.innerHTML = '... loading ...';
-fetch('https://troyluuu.github.io/test/README.md')
+fetch('https://troyluuu.github.io/test/data/product.json')
   .then(function(response) {
     return response.text()
   }).then(function(text) {
-      //console.log(text)
-  productDiv.innerHTML = '';
-  productDiv.innerHTML = text;
+	 
+      var json = JSON.parse(text);
+      productDiv.innerHTML = '';
+      for(var key in json){
+      productDiv.innerHTML += 'json[key].name.bold()'+'  '+json[key].price+'<hr>';
+		  //alert(json[key].name);
+}
   }).catch(function(err) {
       // Error :(
   })
