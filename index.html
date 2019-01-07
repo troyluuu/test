@@ -16,7 +16,7 @@ fetch('https://troyluuu.github.io/test/data/product.json')
       productDiv.innerHTML = '';
       let sum;
       for(var key in json){
-      productDiv.innerHTML += 'json[key].name'+'  '+json[key].price+'<hr>';
+      productDiv.innerHTML += json[key].name+'  '+json[key].price+'<hr>';
       sum += json[key].price;
 }
       let averPrice = sum / json.length();
