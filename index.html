@@ -15,10 +15,7 @@ fetch('https://troyluuu.github.io/test/data/product.json').then(function(respons
       let sum = 0;
       for(var key in json){
       productDiv.innerHTML += json[key].name+'  '+json[key].price+'<hr>';
-      sum += json[key].price;
 }
-      let averPrice = sum % json.length();
-      productDiv.innerHTML += '平均售價:'+averPrice;
   }).catch(function(err) {
       // Error :(
       productDiv.innerHTML = '發生錯誤:(';
