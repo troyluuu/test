@@ -1,0 +1,39 @@
+<span style="font-size:18px;"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+ <TITLE>中午吃啥咪</TITLE>
+ <SCRIPT LANGUAGE="JavaScript">
+var names = [
+"不2糖",
+"喬記",
+"越南",
+"醉雞",
+"刀削麵",
+];
+var time;
+function begin(){
+document.getElementById("btnBegin").disabled = true;
+chouqian();
+}
+function chouqian(){
+var index = Math.floor(Math.random()*1000 % names.length);
+var name = names[index];
+document.getElementById("result").innerHTML = name;
+time = window.setTimeout(chouqian,2);
+}
+function end(){
+window.clearTimeout(time);
+document.getElementById("btnBegin").disabled = false;
+}
+ </SCRIPT>
+</HEAD>
+ 
+<BODY>
+<div style="text-align:center;margin-top:100px">
+<h1>中午吃啥咪</h1>
+<h3 id="result" style="color:blue"></h3>
+<INPUT TYPE="button" VALUE="開始" id="btnBegin" ONCLICK="begin();"> 
+<INPUT TYPE="button" VALUE="結束" id="btnEnd" ONCLICK="end();">
+</div>
+</BODY>
+</HTML></span>
