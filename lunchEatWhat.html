@@ -29,15 +29,30 @@ window.clearTimeout(time);
 document.getElementById("btnBegin").disabled = false;
 swal("恭喜!!", '您決定要吃 : '+$('#result').text(), "success");
 }
+function start(){
+let name = $('#name').val();
+if(name==''){
+swal("錯誤!", "請輸入姓名!!", "warning");
+}else{
+$('#nameDiv').hide();
+$('#lunchDiv').show();
+}
+}
  </SCRIPT>
 </HEAD>
  
 <BODY>
 <div style="text-align:center;margin-top:100px">
 <h1>中午吃啥咪</h1>
+ <div id="nameDiv">
+ <INPUT TYPE="text" VALUE="請輸入姓名" id="name"> 
+ <INPUT TYPE="button" VALUE="送出" ONCLICK="start();"> 
+ <div id="lunchDiv" style="display:none">
+ </div>
 <h3 id="result" style="color:blue"></h3>
 <INPUT TYPE="button" VALUE="開始" id="btnBegin" ONCLICK="begin();"> 
 <INPUT TYPE="button" VALUE="結束" id="btnEnd" ONCLICK="end();">
+ </div>
 </div>
 </BODY>
 </HTML></span>
