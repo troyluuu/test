@@ -37,6 +37,7 @@ document.getElementById("btnEnd").disabled = true;
 }
 function start(){
 let name = $('#name').val();
+name = name.trim();
 if(name==''){
 swal("錯誤!", "請輸入姓名!!", "warning");
 }else{
