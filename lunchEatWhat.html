@@ -32,7 +32,7 @@ time = window.setTimeout(chouqian,2);
 function end(){
 window.clearTimeout(time);
 document.getElementById("btnBegin").disabled = false;
-swal("恭喜!!", $('#name').val()+'決定要吃 : '+$('#result').text(), "success");
+swal("恭喜!!", $('#name').val()+'決定要吃 : '+$('#resultText').val(), "success");
 document.getElementById("btnEnd").disabled = true;
 }
 function start(){
@@ -123,7 +123,8 @@ function findMovie(){
  </div>
  <div id="lunchDiv" style="display:none">
 <h3 id="helloArea" style="color:blue"></h3>
-<INPUT TYPE="hidden" VALUE="" id="result">
+<h3 id="result" style="color:blue"></h3>
+<INPUT TYPE="hidden" VALUE="" id="resultText"> 
 <INPUT TYPE="button" VALUE="開始" id="btnBegin" ONCLICK="begin();"> 
 <INPUT TYPE="button" VALUE="結束" id="btnEnd" ONCLICK="end();" disabled><br><br>
 <INPUT TYPE="button" VALUE="查詢電影" id="btnMovie" ONCLICK="findMovie();">
