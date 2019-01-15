@@ -17,6 +17,7 @@ var time;
 function begin(){
 document.getElementById("btnBegin").disabled = true;
 chouqian();
+document.getElementById("btnEnd").disabled = false;
 }
 function chouqian(){
 var index = Math.floor(Math.random()*1000 % names.length);
@@ -28,6 +29,7 @@ function end(){
 window.clearTimeout(time);
 document.getElementById("btnBegin").disabled = false;
 swal("恭喜!!", $('#name').val()+'決定要吃 : '+$('#result').text(), "success");
+document.getElementById("btnEnd").disabled = true;
 }
 function start(){
 let name = $('#name').val();
@@ -51,7 +53,7 @@ $('#lunchDiv').show();
  <div id="lunchDiv" style="display:none">
 <h3 id="result" style="color:blue"></h3>
 <INPUT TYPE="button" VALUE="開始" id="btnBegin" ONCLICK="begin();"> 
-<INPUT TYPE="button" VALUE="結束" id="btnEnd" ONCLICK="end();">
+<INPUT TYPE="button" VALUE="結束" id="btnEnd" ONCLICK="end();" disabled>
  </div>
 </div>
 </BODY>
