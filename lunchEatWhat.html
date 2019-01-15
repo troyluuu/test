@@ -45,6 +45,48 @@ $('#nameDiv').hide();
 $('#lunchDiv').show();
 }
 }
+function findMovie(){
+  swal({
+  text: '輸入您想查詢的電影 例如:Toys story".',
+  content: "input",
+  button: {
+    text: "Search!",
+    closeModal: false,
+  },
+})
+.then(name => {
+  if (!name) throw null;
+ 
+  return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
+})
+.then(results => {
+  return results.json();
+})
+.then(json => {
+  const movie = json.results[0];
+ 
+  if (!movie) {
+    return swal("很抱歉,沒有找到符合的項目!");
+  }
+ 
+  const name = movie.trackName;
+  const imageURL = movie.artworkUrl100;
+ 
+  swal({
+    title: "Top result:",
+    text: name,
+    icon: imageURL,
+  });
+})
+.catch(err => {
+  if (err) {
+    swal("Oh noes!", "The AJAX request failed!", "error");
+  } else {
+    swal.stopLoading();
+    swal.close();
+  }
+});
+}
  </SCRIPT>
 </HEAD>
  
@@ -58,7 +100,8 @@ $('#lunchDiv').show();
  <div id="lunchDiv" style="display:none">
 <h3 id="result" style="color:blue"></h3>
 <INPUT TYPE="button" VALUE="開始" id="btnBegin" ONCLICK="begin();"> 
-<INPUT TYPE="button" VALUE="結束" id="btnEnd" ONCLICK="end();" disabled>
+<INPUT TYPE="button" VALUE="結束" id="btnEnd" ONCLICK="end();" disabled><br>
+<INPUT TYPE="button" VALUE="查詢電影" id="btnMovie" ONCLICK="findMovie();">
  </div>
 </div>
 </BODY>
