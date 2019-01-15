@@ -3,6 +3,7 @@
 <HEAD>
  <TITLE>中午吃啥咪</TITLE>
  <script type="text/javascript" src="js/bk.js"></script>
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  <SCRIPT LANGUAGE="JavaScript">
 var names = [
 "不2糖",
@@ -25,6 +26,7 @@ time = window.setTimeout(chouqian,2);
 function end(){
 window.clearTimeout(time);
 document.getElementById("btnBegin").disabled = false;
+swal("恭喜!", $('#result').text(), "success");
 }
  </SCRIPT>
 </HEAD>
