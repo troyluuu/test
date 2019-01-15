@@ -33,7 +33,7 @@ function end(){
 window.clearTimeout(time);
 document.getElementById("btnBegin").disabled = false;
 swal("恭喜!!", $('#name').val()+'決定要吃 : '+$('#result').text(), "success");
-$('#result').innerHTML = '';
+document.getElementById("result").innerHTML = '';
 document.getElementById("btnEnd").disabled = true;
 }
 function start(){
