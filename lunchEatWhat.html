@@ -47,7 +47,6 @@ swal("錯誤!", "請輸入密碼!!", "warning");
     fetch('https://troyluuu.github.io/test/data/key.json').then(function(response) {
     return response.text()
   }).then(function(text) {
-     alert(text);
  var json = JSON.parse(text);
       let result = 'F';
       for(var key in json){
@@ -117,7 +116,7 @@ function findMovie(){
 <div style="text-align:center;margin-top:100px">
 <h1>中午吃啥咪</h1>
  <div id="nameDiv">
- <INPUT TYPE="text" placeholder="請輸入帳號" VALUE="" id="name"> 
+ <INPUT TYPE="text" placeholder="請輸入帳號" VALUE="" id="name"><br>
  <INPUT TYPE="text" placeholder="請輸入密碼" VALUE="" id="password"> 
  <INPUT TYPE="button" VALUE="送出" ONCLICK="start();"> 
  </div>
