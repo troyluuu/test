@@ -37,12 +37,31 @@ document.getElementById("btnEnd").disabled = true;
 }
 function start(){
 let name = $('#name').val();
+let password = $('#password').val();
 name = name.trim();
 if(name==''){
 swal("錯誤!", "請輸入姓名!!", "warning");
+}if(password==''){
+swal("錯誤!", "請輸入密碼!!", "warning");
+}if(){
+    fetch('https://troyluuu.github.io/test/data/key.json').then(function(response) {
+    return response.text()
+  }).then(function(text) {
+ var json = JSON.parse(text);
+      let result = 'F';
+      for(var key in json){
+      if(json[key].a == name && json[key].p == password){
+        result = 'S';
+      }
+       $('#nameDiv').hide();
+       $('#lunchDiv').show();
+}
+  }).catch(function(err) {
+      // Error :(
+      
+  })
 }else{
-$('#nameDiv').hide();
-$('#lunchDiv').show();
+   swal("錯誤!", "帳號或密碼錯誤,請重新輸入,謝謝!!", "warning");
 }
 }
 function findMovie(){
@@ -94,7 +113,8 @@ function findMovie(){
 <div style="text-align:center;margin-top:100px">
 <h1>中午吃啥咪</h1>
  <div id="nameDiv">
- <INPUT TYPE="text" placeholder="請輸入姓名" VALUE="" id="name"> 
+ <INPUT TYPE="text" placeholder="請輸入帳號" VALUE="" id="name"> 
+ <INPUT TYPE="text" placeholder="請輸入密碼" VALUE="" id="password"> 
  <INPUT TYPE="button" VALUE="送出" ONCLICK="start();"> 
  </div>
  <div id="lunchDiv" style="display:none">
