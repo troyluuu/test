@@ -43,7 +43,7 @@ if(name==''){
 swal("錯誤!", "請輸入姓名!!", "warning");
 }if(password==''){
 swal("錯誤!", "請輸入密碼!!", "warning");
-}if(){
+}if(name != '' && password != ''){
     fetch('https://troyluuu.github.io/test/data/key.json').then(function(response) {
     return response.text()
   }).then(function(text) {
