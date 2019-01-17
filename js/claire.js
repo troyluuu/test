@@ -47,7 +47,7 @@ swal("錯誤!", "請輸入密碼!!", "warning");
        result = 'S';
        $('#nameDiv').hide();
        if(name == 'david'){
-            name = '<br>霸氣大維登場 全場歡聲雷動 ';
+            name = '霸氣大維登場 全場歡聲雷動 ';
        }
        $('#helloArea').text('歡迎光臨!! ' + name.toUpperCase() + '您好!');
        $('#lunchDiv').show();
