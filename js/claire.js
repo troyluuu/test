@@ -113,5 +113,7 @@ function checkName(){
     let name = $('#name').val();
     if('troy' == name.toLowerCase()){
         swal("阿唷~歡迎主人登入");
+    }else if('david' == name.toLowerCase()){
+        swal("阿唷~歡迎霸氣大維加入中午吃什麼團隊!! Enjoy Your Life~~");
     }
 }
