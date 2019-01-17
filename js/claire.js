@@ -24,7 +24,7 @@ time = window.setTimeout(chouqian,2);
 function end(){
 window.clearTimeout(time);
 document.getElementById("btnBegin").disabled = false;
-swal("恭喜!!", $('#name').val()+'決定要吃 : '+$('#result').text(), "success");
+swal("恭喜!!", $('#name').val().toUpperCase()+'決定要吃 : '+$('#result').text(), "success");
 document.getElementById("result").innerHTML = '';
 document.getElementById("btnEnd").disabled = true;
 }
