@@ -46,6 +46,9 @@ swal("錯誤!", "請輸入密碼!!", "warning");
       if(json[key].a == name.toLowerCase() && json[key].p == password.toLowerCase()){
        result = 'S';
        $('#nameDiv').hide();
+       if(name == 'david'){
+            name = '霸氣大維登場 全場歡聲雷動 ';
+       }
        $('#helloArea').text('歡迎光臨!! ' + name.toUpperCase() + '您好!');
        $('#lunchDiv').show();
       }
