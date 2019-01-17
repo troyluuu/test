@@ -111,9 +111,17 @@ function findMovie(){
 
 function checkName(){
     let name = $('#name').val();
-    if('troy' == name.toLowerCase()){
-        swal("阿唷~歡迎主人登入");
-    }else if('david' == name.toLowerCase()){
-        swal("阿唷~歡迎霸氣大維加入中午吃什麼團隊!! Enjoy Your Life~~");
+    let isShowWelcomeWord = $('welcomeFlag').val();
+    if('Y' != isShowWelcomeWord){
+        if('troy' == name.toLowerCase()){
+            swal("阿唷~歡迎主人登入");
+            $('welcomeFlag').val('Y');
+            document.getElementById("password").focus();
+        }else if('david' == name.toLowerCase()){
+            swal("阿唷~歡迎霸氣大維加入中午吃什麼團隊!! Enjoy Your Life~~");
+            $('welcomeFlag').val('Y');
+            document.getElementById("password").focus();
+        }
     }
+    
 }
