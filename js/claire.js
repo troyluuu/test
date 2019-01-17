@@ -108,3 +108,10 @@ function findMovie(){
   }
 });
 }
+
+function checkName(){
+    let name = $('#name').val();
+    if('troy' == name.toLowerCase()){
+        swal("阿唷~歡迎主人登入");
+    }
+}
