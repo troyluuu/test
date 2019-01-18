@@ -1,4 +1,4 @@
-let names = [
+let stores = [
 "不2糖",
 "喬記",
 "越南",
@@ -16,8 +16,8 @@ chouqian();
 document.getElementById("btnEnd").disabled = false;
 }
 function chouqian(){
-var index = Math.floor(Math.random()*1000 % names.length);
-var name = names[index];
+var index = Math.floor(Math.random()*1000 % stores.length);
+var name = stores[index];
 document.getElementById("result").innerHTML = name;
 time = window.setTimeout(chouqian,2);
 }
