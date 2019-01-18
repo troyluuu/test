@@ -66,48 +66,6 @@ swal("錯誤!", "請輸入密碼!!", "warning");
    swal("錯誤!", "帳號或密碼空白,請重新輸入,謝謝!!", "warning");
 }
 }
-function findMovie(){
-  swal({
-  text: '輸入您想查詢的電影 例如:Toys story".',
-  content: "input",
-  button: {
-    text: "Search!",
-    closeModal: false,
-  },
-})
-.then(name => {
-  if (!name) throw null;
- 
-  return fetch('https://itunes.apple.com/search?term=${name}&entity=movie');
-})
-.then(results => {
-  return results.json();
-})
-.then(json => {
-  const movie = json.results[0];
- 
-  if (!movie) {
-    return swal("很抱歉,沒有找到符合的項目!");
-  }
- 
-  const name = movie.trackName;
-  const imageURL = movie.artworkUrl100;
- 
-  swal({
-    title: "Top result:",
-    text: name,
-    icon: imageURL,
-  });
-})
-.catch(err => {
-  if (err) {
-    swal("Oh noes!", "The AJAX request failed!", "error");
-  } else {
-    swal.stopLoading();
-    swal.close();
-  }
-});
-}
 
 function checkName(){
     let name = $('#name').val();
