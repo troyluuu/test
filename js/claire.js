@@ -28,7 +28,7 @@ swal("恭喜!!", $('#name').val().toUpperCase()+'決定要吃 : '+$('#result').t
 document.getElementById("result").innerHTML = '';
 document.getElementById("btnEnd").disabled = true;
 }
-function start(){
+function pickOne(){
 var name = $('#name').val();
 var password = $('#password').val();
 name = name.trim();
