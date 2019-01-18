@@ -1,4 +1,4 @@
-let stores = [
+var stores = [
 "不2糖",
 "喬記",
 "越南",
@@ -29,8 +29,8 @@ document.getElementById("result").innerHTML = '';
 document.getElementById("btnEnd").disabled = true;
 }
 function start(){
-let name = $('#name').val();
-let password = $('#password').val();
+var name = $('#name').val();
+var password = $('#password').val();
 name = name.trim();
 if(name==''){
 swal("錯誤!", "請輸入姓名!!", "warning");
@@ -41,7 +41,7 @@ swal("錯誤!", "請輸入密碼!!", "warning");
     return response.text()
   }).then(function(text) {
  var json = JSON.parse(text);
-      let result = 'F';
+      var result = 'F';
       for(var key in json){
       if(json[key].a == name.toLowerCase() && json[key].p == password.toLowerCase()){
        result = 'S';
