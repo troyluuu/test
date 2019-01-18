@@ -28,7 +28,7 @@ var result = $('#result').text();
 swal("恭喜!!", $('#name').val().toUpperCase()+'決定要吃 : '+result, "success");
 document.getElementById("result").innerHTML = '';
 document.getElementById("btnEnd").disabled = true;
-$('#mapDiv').innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14459.477174422456!2d121.53153475374756!3d25.03850942473491!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a97f889dd687%3A0x2004d9828914490a!2z5aSn5a6J5qOu5p6X5YWs5ZyS56uZ!5e0!3m2!1szh-TW!2stw!4v1547796239687" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>';
+$('#googleMap').(src,'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14459.477174422456!2d121.53153475374756!3d25.03850942473491!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a97f889dd687%3A0x2004d9828914490a!2z5aSn5a6J5qOu5p6X5YWs5ZyS56uZ!5e0!3m2!1szh-TW!2stw!4v1547796239687' width="400" height="300" frameborder="0" style="border:0" allowfullscreen>');
 }
 function pickOne(){
 var name = $('#name').val();
