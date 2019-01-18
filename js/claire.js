@@ -73,7 +73,7 @@ function checkName(){
     let isShowWelcomeWord = $('#welcomeFlag').val();
     if('Y' != isShowWelcomeWord){
         if('david' == name.toLowerCase()){
-            swal("阿唷~歡迎霸氣大維加入中午吃什麼團隊!! Enjoy Your Life ~~ Life is fantasty fantastic ~~");
+            swal("阿唷~歡迎霸氣大維加入中午吃什麼團隊!! Enjoy Your Life ~~ Life is fantastic ~~");
             $('#welcomeFlag').val('Y');
             document.getElementById("password").focus();
         }
