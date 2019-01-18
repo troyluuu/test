@@ -71,12 +71,8 @@ function checkName(){
     let name = $('#name').val();
     let isShowWelcomeWord = $('#welcomeFlag').val();
     if('Y' != isShowWelcomeWord){
-        if('troy' == name.toLowerCase()){
-            swal("阿唷~歡迎主人登入");
-            $('#welcomeFlag').val('Y');
-            document.getElementById("password").focus();
-        }else if('david' == name.toLowerCase()){
-            swal("阿唷~歡迎霸氣大維加入中午吃什麼團隊!! Enjoy Your Life~~");
+        if('david' == name.toLowerCase()){
+            swal("阿唷~歡迎霸氣大維加入中午吃什麼團隊!! Enjoy Your Life ~~ Life is fantasty fantastic ~~");
             $('#welcomeFlag').val('Y');
             document.getElementById("password").focus();
         }
