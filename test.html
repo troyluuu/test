@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>歪尼匯率換算器</title>
+<style type="text/css">
+	.moneyBox{
+      font-size: 20px;
+      font-family: "微軟雅黑";
+    }
+    .moneyBox input{
+      width: 100px;
+      height: 24px;
+      padding: 0 10px;
+      margin: 0 10px;
+      border-radius: 5px;
+      border: 1px solid #333;
+    }
+</style>
+</head>
+<body>
+<div id="demo">
+    <h1>歪尼匯率換算器</h1>
+    <div class="moneyBox"><span>cny</span><input v-model="cny" type="text"><span>人民幣￥</span></div>
+    <div class="moneyBox"><span>usd</span><input v-model="usd" type="text"><span>美元$</span></div>
+    <div class="moneyBox"><span>hkd</span><input v-model="hkd" type="text"><span>港幣$</span></div>
+ </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+
+  var CNY_USD = 6.96;
+  var CNY_HKD = 0.90;
+  var data={  cny:'100'
+      };
+  var myVue = new Vue({
+   el: '#demo',
+   data: data,
+   computed: {
+     usd:{
+       get: function() {
+         return (this.cny/CNY_USD).toFixed(2);
+       },
+       set: function(newValue) {
+         this.cny = (newValue*CNY_USD).toFixed(2);
+       }
+     },
+     hkd:{
+       get: function() {
+         return (this.cny/CNY_HKD).toFixed(2);
+       },
+       set: function(newValue) {
+         this.cny = (newValue*CNY_HKD).toFixed(2);
+       }
+     }
+   }
+   })
+</script>
+
+</html>
